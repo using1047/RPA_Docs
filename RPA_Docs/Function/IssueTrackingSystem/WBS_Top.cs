@@ -33,6 +33,8 @@ namespace RPA_Docs.Function.IssueTrackingSystem
 
             if (txt_Process.Text == string.Empty) { MessageBox.Show("업무 명을 입력해주세요."); b = false; }
 
+            if (dtp_Start.Value > dtp_End.Value) { MessageBox.Show("종료일자를 시작일자와 같거나 이후로 설정해주세요."); b = false; }
+
             if (b == true) { wbsData data = SaveData(); this.getData(data); }
         }
 
@@ -72,6 +74,16 @@ namespace RPA_Docs.Function.IssueTrackingSystem
                     pb_Importance.BackColor = Color.Red;
                     break;
             }
+        }
+
+        private void dtp_Start_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtp_Start.Value > dtp_End.Value)MessageBox.Show("종료 일자가 시작 일자보다 먼저일수 없습니다.");
+        }
+
+        private void dtp_End_ValueChanged(object sender, EventArgs e)
+        {
+            if(dtp_Start.Value > dtp_End.Value)MessageBox.Show("종료 일자가 시작 일자보다 먼저일수 없습니다.");
         }
     }
 }

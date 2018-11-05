@@ -153,6 +153,7 @@
             this.dtp_Start.Name = "dtp_Start";
             this.dtp_Start.Size = new System.Drawing.Size(187, 21);
             this.dtp_Start.TabIndex = 32;
+            this.dtp_Start.ValueChanged += new System.EventHandler(this.dtp_Start_ValueChanged);
             // 
             // dtp_End
             // 
@@ -160,6 +161,7 @@
             this.dtp_End.Name = "dtp_End";
             this.dtp_End.Size = new System.Drawing.Size(187, 21);
             this.dtp_End.TabIndex = 33;
+            this.dtp_End.ValueChanged += new System.EventHandler(this.dtp_End_ValueChanged);
             // 
             // pb_Importance
             // 
