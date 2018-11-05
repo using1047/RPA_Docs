@@ -34,6 +34,7 @@
             this.col_startDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_endDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_Importance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_WBS)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,12 +47,14 @@
             this.col_Todo,
             this.col_startDate,
             this.col_endDate,
-            this.col_Importance});
-            this.dgv_WBS.Location = new System.Drawing.Point(0, 0);
+            this.col_Importance,
+            this.col_Status});
+            this.dgv_WBS.Location = new System.Drawing.Point(3, -3);
             this.dgv_WBS.Name = "dgv_WBS";
             this.dgv_WBS.RowTemplate.Height = 23;
-            this.dgv_WBS.Size = new System.Drawing.Size(589, 614);
+            this.dgv_WBS.Size = new System.Drawing.Size(654, 614);
             this.dgv_WBS.TabIndex = 0;
+            this.dgv_WBS.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_WBS_CellMouseClick);
             // 
             // col_Classify
             // 
@@ -81,6 +84,12 @@
             this.col_Importance.Name = "col_Importance";
             this.col_Importance.Width = 65;
             // 
+            // col_Status
+            // 
+            this.col_Status.HeaderText = "진행도";
+            this.col_Status.Name = "col_Status";
+            this.col_Status.Width = 65;
+            // 
             // WBS_Bottom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -100,5 +109,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_startDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_endDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_Importance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_Status;
     }
 }

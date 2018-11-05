@@ -15,7 +15,8 @@ namespace RPA_Docs.Function.IssueTrackingSystem
         public string startDate { get; set; }
         public string endDate { get; set; }
         public Color Importance { get; set; }
-        //public int State { get; set; }
+        public string State { get; set; }
+
         //public string Memo { get; set; }
     }
 }

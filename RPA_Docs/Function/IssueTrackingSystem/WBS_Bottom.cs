@@ -29,6 +29,7 @@ namespace RPA_Docs.Function.IssueTrackingSystem
             row.Cells["col_startDate"].Value = data.startDate;
             row.Cells["col_endDate"].Value = data.endDate;
             row.Cells["col_Importance"].Style.BackColor = data.Importance;
+            row.Cells["col_Status"].Value = data.State;
 
             dgv_WBS.CellPainting += dgv_WBS_CellPainting;
             dgv_WBS.CellFormatting += Dgv_WBS_CellFormatting;
@@ -82,6 +83,12 @@ namespace RPA_Docs.Function.IssueTrackingSystem
             }
 
             
+        }
+
+        private void dgv_WBS_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int row = e.RowIndex;
+            dgv_WBS.Rows[row].Selected = true;
         }
     }
 }
