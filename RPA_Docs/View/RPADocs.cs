@@ -112,7 +112,10 @@ namespace RPA_Docs.View
                                     temp += wb.dgv_WBS.Rows[r].Cells[c].FormattedValue.ToString() + ",";
                                     break;
                                 case 4:
-                                    temp += wb.dgv_WBS.Rows[r].Cells[c].Style.BackColor.Name + "\r\n";
+                                    temp += wb.dgv_WBS.Rows[r].Cells[c].Style.BackColor.Name + ",";
+                                    break;
+                                case 5:
+                                    temp += wb.dgv_WBS.Rows[r].Cells[c].FormattedValue.ToString() + "\r\n";
                                     break;
                             }
                         }
@@ -212,6 +215,9 @@ namespace RPA_Docs.View
                                     wd.Importance = Color.Green;
                                 else if (lines[r].Split(',').ElementAt(4).ToString() == "Blue")
                                     wd.Importance = Color.Blue;
+                                break;
+                            case 5:
+                                wd.State = lines[r].Split(',').ElementAt(5);
                                 break;
                         }
                         wd.userName = "김미나";
